@@ -14,7 +14,7 @@ applications.
 ## Contents
  * PHP 5.5.* ([ondrej](https://launchpad.net/~ondrej/+archive/php5)'s repos)
  * [Composer](https://getcomposer.org/)
- * [Pyrus](http://pear2.php.net/pyrus.phar)
+ * [Pear](http://pear.php.net/)
  * [PHPUnit](http://phpunit.de/) 3.7
  * [PHP Copy/Paste Detector - phpcpd](https://github.com/sebastianbergmann/phpcpd)
  * [PHP Dead Code Detector - phpdcd](https://github.com/sebastianbergmann/phpdcd)
