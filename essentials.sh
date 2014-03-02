@@ -38,8 +38,12 @@ alias php-server="runPhpInternalServer"
 
 # Tools
 alias composer="runPhpEssentials composer"
+alias pear="runPhpEssentials pear"
 alias phpunit="runPhpEssentials phpunit"
 alias phpcpd="runPhpEssentials phpcpd"
 alias phpdcd="runPhpEssentials phpdcd"
 alias phploc="runPhpEssentials phploc"
 alias pdepend="runPhpEssentials pdepend"
+alias phpcs="runPhpEssentials phpcs"
+alias phpmd="runPhpEssentials phpmd"
+alias behat="runPhpEssentials behat"

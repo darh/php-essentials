@@ -13,13 +13,13 @@ applications.
 
 ## Contents
  * PHP 5.5.* ([ondrej](https://launchpad.net/~ondrej/+archive/php5)'s repos)
+ * [Composer](https://getcomposer.org/)
+ * [Pyrus](http://pear2.php.net/pyrus.phar)
  * [PHPUnit](http://phpunit.de/) 3.7
  * [PHP Copy/Paste Detector - phpcpd](https://github.com/sebastianbergmann/phpcpd)
  * [PHP Dead Code Detector - phpdcd](https://github.com/sebastianbergmann/phpdcd)
  * [Measuring the size and analyzing the structure of a PHP project - phploc](https://github.com/sebastianbergmann/phploc)
  * [PHP software metrics - pdepend](http://pdepend.org/)
-
-To be added:
  * [PHP Code sniffer- phpcs](http://pear.php.net/package/PHP_CodeSniffer)
  * [PHP Mess Detector - phpmd](http://phpmd.org/)
  * [Behaviour driven development for PHP - behat](http://behat.org/)
@@ -51,14 +51,18 @@ docker run --publish 80:80 -rm -t -i darh/php-essentials \
 ```
 
 
-## Use the tools:
+## The tools:
 ```sh
 docker run -rm -i -t darh/php-essentials composer
+docker run -rm -i -t darh/php-essentials pear
 docker run -rm -i -t darh/php-essentials phpunit
 docker run -rm -i -t darh/php-essentials phpcpd
 docker run -rm -i -t darh/php-essentials phpdcd
 docker run -rm -i -t darh/php-essentials phploc
 docker run -rm -i -t darh/php-essentials pdepend
+docker run -rm -i -t darh/php-essentials phpcs
+docker run -rm -i -t darh/php-essentials phpmd
+docker run -rm -i -t darh/php-essentials behat
 ```
 Please note, that running things like `composer autoupdate` is futile as
 container & it's content will be removed when command finishes. 
@@ -73,7 +77,7 @@ and none of the examples actualy maps local files to the container:
 A bit more usefull example -- adding volume param that maps the
 current folder and hinting PHP server where it's document root is
 ```sh
-docker run --volume ``pwd``:/opt/web/page:r --publish 80:80 -rm -t -i darh/php-essentials \
+docker run --volume `pwd`:/opt/web/page:r --publish 80:80 -rm -t -i darh/php-essentials \
   php -S 0.0.0.0:80 -t /opt/web/page
 ```
 
@@ -90,4 +94,9 @@ your local machine
 In case you want to build it yourself
 ```sh
 docker build -rm -t darh/php-essentials
+```
+
+# Bash
+```sh
+docker run -rm -i -t darh/php-essentials bash
 ```
