@@ -28,7 +28,7 @@ RUN /usr/local/bin/composer global require \
 	'behat/behat=2.4.*@stable'
 
 # Add path to composed tools
-ENV PATH /.composer/vendor/bin:$PATH
+ENV PATH /root/.composer/vendor/bin:$PATH
 
 # Custom configuration
 ADD essentials.ini /etc/php5/cli/conf.d/99-essentials.ini
