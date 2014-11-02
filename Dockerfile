@@ -1,11 +1,9 @@
-FROM ubuntu:quantal
+FROM ubuntu:14.04.1
 MAINTAINER Denis Arh <denis.arh@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # PHP binary & extensions
-RUN echo "deb http://ppa.launchpad.net/ondrej/php5/ubuntu quantal main " > /etc/apt/sources.list.d/ondrej.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 RUN apt-get update
 RUN apt-get install -y -q php5-cli=5.5.*
 RUN apt-get install -y -q php5-curl php5-xdebug php5-readline php5-sqlite
@@ -30,7 +28,7 @@ RUN /usr/local/bin/composer global require \
 	'behat/behat=2.4.*@stable'
 
 # Add path to composed tools
-ENV PATH /.composer/vendor/bin:$PATH
+ENV PATH /root/.composer/vendor/bin:$PATH
 
 # Custom configuration
 ADD essentials.ini /etc/php5/cli/conf.d/99-essentials.ini
