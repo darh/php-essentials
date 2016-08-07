@@ -34,4 +34,4 @@ ENV PATH /root/.composer/vendor/bin:$PATH
 ADD essentials.ini /etc/php5/cli/conf.d/99-essentials.ini
 
 
-CMD ["/usr/bin/php","-a"]
+CMD ["/usr/bin/php" , "-a"]
